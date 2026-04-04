@@ -11,7 +11,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
-/* BODY FIX */
 body{
     font-family:'Poppins',sans-serif;
     background:#000;
@@ -61,12 +60,11 @@ body{
     to{opacity:0;visibility:hidden}
 }
 
-/* ===== BACKGROUND FIX ===== */
+/* ===== BACKGROUND ===== */
 .background{
     position:fixed;
     inset:0;
     z-index:0;
-    overflow:hidden;
 }
 
 .bg{
@@ -98,7 +96,6 @@ body{
     animation:scan 5s linear infinite;
 }
 
-/* GLOW FIX */
 .glow{
     position:absolute;
     width:500px;
@@ -114,7 +111,7 @@ body{
 @keyframes float{from{transform:translate(-100px,-50px)}to{transform:translate(100px,50px)}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-/* ===== PAGE FIX ===== */
+/* ===== PAGE ===== */
 .page{
     position:relative;
     z-index:2;
@@ -126,7 +123,6 @@ body{
     transform:scale(1.05);
 }
 
-/* muncul setelah loader */
 .page.show{
     animation:pageReveal 1.2s ease forwards;
 }
@@ -135,13 +131,11 @@ body{
     to{opacity:1;transform:scale(1)}
 }
 
-/* CONTENT */
 .container{
     text-align:center;
     animation:fadeInUp 1s ease;
 }
 
-/* LOGO */
 .logo{
     width:320px;
     margin-bottom:20px;
@@ -153,7 +147,6 @@ body{
     transform:scale(1.05);
 }
 
-/* TITLE */
 h1{
     font-family:'Orbitron';
     letter-spacing:6px;
@@ -168,7 +161,6 @@ h1{
     color:#ff4d4d;
 }
 
-/* CARD */
 .card{
     margin-top:50px;
     padding:40px;
@@ -184,7 +176,6 @@ h1{
     gap:30px;
 }
 
-/* ITEM */
 .item{
     display:flex;
     flex-direction:column;
@@ -202,7 +193,6 @@ h1{
     box-shadow:0 0 20px red;
 }
 
-/* ICON */
 .icon{
     font-size:32px;
     color:#ff1a1a;
@@ -214,7 +204,6 @@ h1{
     letter-spacing:2px;
 }
 
-/* RESPONSIVE */
 @media(max-width:700px){
     .card{
         grid-template-columns:repeat(2,1fr);
@@ -244,7 +233,6 @@ h1{
 
 <!-- MAIN -->
 <div class="page" id="page">
-
 <div class="container">
 
 <img src="https://image2url.com/r2/default/images/1775030108963-42878e89-fae2-428d-955c-b487bdb11992.png" class="logo">
@@ -254,25 +242,42 @@ h1{
 
 <div class="card">
 
-<div class="item"><div class="icon"><i class="fa-solid fa-lightbulb"></i></div><div class="label">INTRODUCTION</div></div>
-<div class="item"><div class="icon"><i class="fa-solid fa-users"></i></div><div class="label">MEMBER</div></div>
-<div class="item"><div class="icon"><i class="fa-solid fa-clipboard-list"></i></div><div class="label">PROJECT</div></div>
+<div class="item" id="introBtn">
+    <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+    <div class="label">INTRODUCTION</div>
+</div>
+
+<div class="item">
+    <div class="icon"><i class="fa-solid fa-users"></i></div>
+    <div class="label">MEMBER</div>
+</div>
+
+<div class="item">
+    <div class="icon"><i class="fa-solid fa-clipboard-list"></i></div>
+    <div class="label">PROJECT</div>
+</div>
 
 <div class="item" id="founderBtn">
-<div class="icon"><i class="fa-solid fa-user-tie"></i></div>
-<div class="label">FOUNDER</div>
+    <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+    <div class="label">FOUNDER</div>
 </div>
 
-<div class="item"><div class="icon"><i class="fa-solid fa-phone"></i></div><div class="label">CONTACT</div></div>
-<div class="item"><div class="icon"><i class="fa-solid fa-circle-info"></i></div><div class="label">ABOUT</div></div>
+<div class="item">
+    <div class="icon"><i class="fa-solid fa-phone"></i></div>
+    <div class="label">CONTACT</div>
+</div>
+
+<div class="item">
+    <div class="icon"><i class="fa-solid fa-circle-info"></i></div>
+    <div class="label">ABOUT</div>
+</div>
 
 </div>
 </div>
-
 </div>
 
 <script>
-// LOADER FIX
+// LOADER
 let p=0;
 const progress=document.getElementById("progress");
 const loader=document.getElementById("loader");
@@ -284,10 +289,9 @@ let load=setInterval(()=>{
 
     if(p>=100){
         clearInterval(load);
-
         setTimeout(()=>{
             loader.classList.add("hide-loader");
-            page.classList.add("show"); // tampilkan halaman setelah loader
+            page.classList.add("show");
         },500);
     }
 },80);
@@ -295,6 +299,10 @@ let load=setInterval(()=>{
 // REDIRECT
 document.getElementById("founderBtn").onclick=()=>{
     window.location.href="https://umbrella-founder-portpolio.pages.dev/";
+};
+
+document.getElementById("introBtn").onclick=()=>{
+    window.location.href="https://link-introduction-kamu.com/";
 };
 </script>
 
